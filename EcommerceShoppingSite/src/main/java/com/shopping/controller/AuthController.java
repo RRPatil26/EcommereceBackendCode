@@ -88,4 +88,8 @@ public class AuthController {
         return userRepository.findAll();
 
     }
+	@GetMapping("/users/{userId}")
+	public User getUserById(@PathVariable Long userId) {
+	    return userRepository.findById(userId).orElse(null);
+	}
 }
